@@ -25,23 +25,23 @@
 stock <- "300766"
 source('common.R')
 # 加载相关包
-library(zoo)
-library(xts)
-library(TTR)
-library(quantmod)
-library(lubridate)
-library(xts)
-library(timeDate)
-library(timeSeries)
-library(fBasics)
-library(pastecs)
-library(xml2)
-library(rvest)
-library(lubridate)
-library(httr)
-library(tidyverse)
-library(Tushare)
-# 
+    library(zoo)
+    library(xts)
+    library(TTR)
+    library(quantmod)
+    library(lubridate)
+    library(xts)
+    library(timeDate)
+    library(timeSeries)
+    library(fBasics)
+    library(pastecs)
+    library(xml2)
+    library(rvest)
+    library(lubridate)
+    library(httr)
+    library(tidyverse)
+    library(Tushare)
+# ·
 # main
 # -------------------------------------------------------
 # 1 运用所学习的三种网络爬虫方法（quantmod程序包、网页爬取技术、Tushare数据库）任意抓取深圳证券交易所上市的股票，并分别进行绘图和基本统计分析
@@ -71,7 +71,7 @@ library(Tushare)
     }
     # -------------------------------------------------------
     # | <quantmod> | <web> | <Tushare> |
-    Q1(stock, 'sz', 'quantmod', 'undefind')
+    # Q1(stock, 'sz', 'quantmod', 'undefind')
     # Q1(stock, 'sz', 'web', 'undefind')
     # Q1(stock, 'sz', 'Tushare', 'undefind')
     # -------------------------------------------------------
@@ -91,8 +91,8 @@ library(Tushare)
     # -------------------------------------------------------
     # | <quantmod> | <web> | <Tushare> |
     SZZS <- "399001"
-    Q2(SZZS, 'sz', 'quantmod')
-    # Q2(SZZS, 'sz', 'web')
+    # Q2(SZZS, 'sz', 'quantmod')
+    Q2(SZZS, 'sz', 'web')
     # Tushare 暂未实现
     # Q2(SZZS, 'sz', 'Tushare')
     # -------------------------------------------------------
@@ -118,8 +118,8 @@ library(Tushare)
     SZCZ.r <- dailyReturn(SZCZ_price, subset = "2019-03-25/2020-06-24",type = "log")
 
     # 将序列转换为时间序列对象
-    GETUI.r<-ts(GETUI.r, start = c(2019,03,25), freq = 60)
-    SZCZ.r<-ts(SZCZ.r, start = c(2019,03,25), freq = 60)
+    GETUI.r <- ts(GETUI.r, start = c(2019,03,25), freq = 60)
+    SZCZ.r <- ts(SZCZ.r, start = c(2019,03,25), freq = 60)
 
     print("单一资产和市场收益率的相关性分析")
 

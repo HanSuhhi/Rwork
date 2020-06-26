@@ -106,8 +106,8 @@
     unitRootTest <- function(vel) {
         unitrootTest(vel, type = c("ct"))
     }
-    # unitRootTest(GETUI_price)
-    unitRootTest(diff(GETUI_price))
+    unitRootTest(GETUI_price)
+    # unitRootTest(diff(GETUI_price))
 
     #######
     # 3 urca
@@ -145,14 +145,14 @@
     SZCZ_ar$order
 
     #######
-    # 3 市场弱式有效假说 - 对价格序列或其对数序列进行单位根检验，以判断其是否符合随机 游走
+    # 3 市场弱式有效假说 - 对价格序列或其对数序列进行单位根检验，以判断其是否符合随机游走
     #######
     adfTest(SZCZ_price, type="ct")
     adfTest(diff(SZCZ_price), type="nc")
     Box.test(SZCZ_price, type="Ljung-Box")
 
     #######
-    # 4 市场弱式有效假说 - 对价格序列或其对数序列进行单位根检验，以判断其是否符合随机 游走
+    # 4 市场弱式有效假说 - 以收益率序列建模并对模型的干扰项序列进行相关性检验
     #######
     SZCZ_price <- getStockByQuantmod("399001.sz")
     shenzhen.r <- dailyReturn(SZCZ_price[, 6], type="log")[-1]
